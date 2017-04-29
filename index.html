@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <canvas width = "500" height = "100"></canvas>
+    <script src = "code/shapes.js"></script>
+    <script>
+        var context = document.querySelector('canvas').getContext('2d');
+
+        context.strokeIsoscelesTrapezoid(20, 15, 50, 70, 35);
+
+        context.fillStyle = 'red';
+        context.fillDiamond(120, 0, 60);
+
+        context.strokeZigZag(220, 0, 60, 60);
+
+        context.strokeSpiral(320, 5, 60);
+
+        context.fillStyle = 'yellow';
+        context.fillStar()
+    </script>
+</body>
+</html>

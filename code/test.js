@@ -19,4 +19,26 @@ function testStrokeIsoscelesTrapezoid() {
     }, 500);
 }
 
-testStrokeIsoscelesTrapezoid();
+function testQuadraticCurve() {
+    var context = document.querySelector('canvas').getContext('2d');
+
+    context.clearRect(0, 0, 500, 100);
+
+    context.translate(10, 10);
+    context.beginPath();
+    context.moveTo(30, 0);
+    var x, y;
+    x = 30*Math.cos(Math.PI / 4);
+    y = 30*Math.sin(Math.PI / 4);
+    context.quadraticCurveTo(0, 0, x, y);
+    context.stroke();
+
+    context.fillStyle = 'red';
+    context.fillRect(0, 0, 1, 1);
+    context.fillRect(x, y, 1 ,1);
+
+
+}
+
+// testStrokeIsoscelesTrapezoid();
+testQuadraticCurve();

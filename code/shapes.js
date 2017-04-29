@@ -87,6 +87,19 @@ canvasContextPrototype.strokeSpiral = function(x, y, width, density, segments) {
     this.restore();
 };
 
-canvasContextPrototype.fillStar = function() {
+canvasContextPrototype.fillStar = function(x, y, width, peaks) {
+    peaks = peaks || 8;
+    var radius = width / 2;
 
+    this.save();
+    this.translate(x + radius, y + radius);
+    this.beginPath();
+    this.moveTo(radius, 0);
+
+    for(var i = 1; i <= peaks; i++) {
+        this.quadraticCurveTo(0, 0, radius*Math.cos(i * 2 * Math.PI / peaks), radius*Math.sin(i * 2 * Math.PI / peaks));
+    }
+
+    this.fill();
+    this.restore();
 };
